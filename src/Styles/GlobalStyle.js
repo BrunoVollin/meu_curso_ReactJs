@@ -1,4 +1,7 @@
-* {
+import { createGlobalStyle } from "styled-components";
+
+export default createGlobalStyle`
+    * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -22,7 +25,7 @@ html {
   background: var(--primary);
 }
 
-.App {
+& {
   width: 100vw;
   height: 100vh;
   background-color: var(--background);
@@ -34,8 +37,10 @@ html {
 }
 
 :root {
-  --primary: #ffff;
-  --secondary: #555555;
-  --emphasis: #6461d5;
-  --background: #CCCCCC;
+  --primary: ${props => props.theme.colors.primary};
+  --secondary: ${props => props.theme.colors.secondary};
+  --third: ${props => props.theme.colors.third};
+  --emphasis:  ${props => props.theme.colors.emphasis};
+  --background: ${props => props.theme.colors.background};
 }
+`;

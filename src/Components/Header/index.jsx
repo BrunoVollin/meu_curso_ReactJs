@@ -1,5 +1,6 @@
 import React from "react";
 import profile from "../../Img/profile.png";
+import ThemeButton from "../ThemeButton";
 import {
   Emphasis,
   EmphasisName,
@@ -9,9 +10,10 @@ import {
   Wrapper,
   Text,
   Line,
+  Button,
 } from "./styles";
 
-const Header = () => {
+const Header = ({toggleTheme}) => {
   return (
     <>
       <Wrapper>
@@ -24,6 +26,9 @@ const Header = () => {
             Meu nome é <EmphasisName>Bruno Almeida</EmphasisName>
           </H2>
         </Text>
+        <Button onClick={toggleTheme}>
+          <ThemeButton />
+        </Button>
       </Wrapper>
       <Line />
     </>
